@@ -1,0 +1,28 @@
+<!-- calculator/templates/calculator/calculator.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+        /* Add this CSS rule to change the text color to green */
+        h1, h2 {
+            color: green;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Calculator</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Calculate">
+    </form>
+    {% if result %}
+    <h2>Result: {{ result }}</h2>
+    {% endif %}
+
+    <h2><a href="/get_calculator">Go to get calc</a></h2>
+
+</body>
+</html>

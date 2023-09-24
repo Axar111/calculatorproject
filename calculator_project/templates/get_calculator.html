@@ -1,0 +1,39 @@
+<!-- calculator/templates/calculator/get_calculator.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GET Calculator</title>
+    <style>
+        /* Add this CSS rule to change the text color to green */
+        h1, h2 {
+            color: rgb(12, 29, 219);
+        }
+    </style>
+
+</head>
+<body>
+    <h1>GET Calculator</h1>
+    <form method="get">
+        <label for="num1">Number 1:</label>
+        <input type="number" name="num1" id="num1" required>
+        <br>
+        <label for="num2">Number 2:</label>
+        <input type="number" name="num2" id="num2" required>
+        <br>
+        <label for="operation">Operation:</label>
+        <select name="operation" id="operation" required>
+            <option value="+">Add</option>
+            <option value="-">Subtract</option>
+            <option value="*">Multiply</option>
+            <option value="/">Divide</option>
+        </select>
+        <br>
+        <input type="submit" value="Calculate">
+    </form>
+    {% if result %}
+    <h2>Result: {{ result }}</h2>
+    {% endif %}
+
+    <h2><a href="/">Go to post calc</a></h2>
+</body>
+</html>
